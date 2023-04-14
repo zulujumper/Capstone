@@ -1,25 +1,29 @@
-h1 {
+#buddy {
   font-family: 'Schibsted Grotesk', sans-serif;
-}
-
-.header {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 32px;
-  background-color: #0a0a23;
-  color: #fff;
-  border-bottom: 4px solid #fdb347;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  font-size: 8rem;
+  transform: translate(-50%, -50%);
+  color:darkred;
 }
 
 #eggs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 10px;
+  max-width: 100%;
+  padding-top: 5%;
 }
 
+#nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding-top: 10%;
+
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: darkred;
+  background-color: brown;
+}
