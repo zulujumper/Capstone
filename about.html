@@ -9,8 +9,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@900&display=swap" rel="stylesheet">
+<!-- **IGNORE** THE WEIRD STYLING THAT VS CODE ADDS TO THIS CODE LINE. It can all be on one line -->
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+/>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
 </head>
 <body>
-
+  <nav id="nav-bar">
+    <i class="fas fa-bars"></i>
+    <nav>
+      <i class="fas fa-bars"></i>
+      <ul class="hidden--mobile nav-links"></ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About</li>
+        <li>Results</li>
+      </ul>
+    </nav>
+    <button class="button" id="home">Home</button>
+    <button class="button" id="About">About</button>
+    <button class="button" id="Contact">Contact</button>
+    <button class="button" id="Results">Results</button>
+  </nav>
 </body>
 </html>
