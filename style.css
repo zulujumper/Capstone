@@ -1,5 +1,11 @@
-#buddy {
+body {
+  font-size: large;
   font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+
+#buddy {
+
   position: absolute;
   top: 15%;
   left: 50%;
@@ -15,7 +21,8 @@
 
 #nav-bar {
   display: flex;
-  justify-content: space-around;
+  align-items: column;
+  /* justify-content: ; */
   align-items: stretch;
   padding-top: 10%;
 
@@ -31,17 +38,20 @@
 header {
   background-image: url(https://raw.githubusercontent.com/zulujumper/Capstone/master/pexels-anna-shvets-4045568.jpg);
   background-size: cover;
-  height: 50vh;
+  height: 66vh;
 }
 
 @media (min-width: 550px) {
   nav > .fa-bars {
     display: none;
   }
-  .hidden--mobile {
-    display: none;
-  }
 }
+
+@media (max-width: 550px) {
+    .hidden--mobile {
+      display: none;
+    }
+  }
 
 header > a {
   text-decoration: none;
