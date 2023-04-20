@@ -1,11 +1,11 @@
 body {
   font-size: large;
   font-family: 'Schibsted Grotesk', sans-serif;
+  background-color: brown;
 }
 
 
 #buddy {
-
   position: absolute;
   top: 15%;
   left: 50%;
@@ -16,24 +16,8 @@ body {
 
 #eggs {
   max-width: 100%;
-  padding-top: 5%;
+  padding-top: 25%;
 }
-
-#nav-bar {
-  display: flex;
-  align-items: column;
-  /* justify-content: ; */
-  align-items: stretch;
-  padding-top: 10%;
-
-}
-
-/* .header {
-  position: relative;
-  text-align: center;
-  color: darkred;
-  background-color: brown;
-} */
 
 header {
   background-image: url(https://raw.githubusercontent.com/zulujumper/Capstone/master/pexels-anna-shvets-4045568.jpg);
@@ -41,22 +25,47 @@ header {
   height: 66vh;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 375px) {
   nav > .fa-bars {
     display: none;
   }
 }
 
-@media (max-width: 550px) {
-    .hidden--mobile {
-      display: none;
-    }
+@media (max-width: 375px) {
+  .hidden--mobile {
+    display: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: brown;
   }
 
-header > a {
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: wheat;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  background-color: white;
-  font-size: 1.5em;
-  padding: 1.5rem;
-  border-radius: 10px;
+}
+
+.active {
+  background-color: darkslategrey;
+}
+
+li a:hover {
+  background-color: darkslategrey;
+}
+
+.textarea {
+  display: flex;
+  justify-content: center;
 }
