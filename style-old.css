@@ -1,0 +1,71 @@
+body {
+  font-size: large;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  background-color: brown;
+}
+
+
+#buddy {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  font-size: 8rem;
+  transform: translate(-50%, -50%);
+  color:darkred;
+}
+
+#eggs {
+  max-width: 100%;
+  padding-top: 25%;
+}
+
+header {
+  background-image: url(https://raw.githubusercontent.com/zulujumper/Capstone/master/pexels-anna-shvets-4045568.jpg);
+  background-size: cover;
+  height: 66vh;
+}
+
+@media (min-width: 375px) {
+  nav > .fa-bars {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .hidden--mobile {
+    display: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: brown;
+  }
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: wheat;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.active {
+  background-color: darkslategrey;
+}
+
+li a:hover {
+  background-color: darkslategrey;
+}
+
+.textarea {
+  display: flex;
+  justify-content: center;
+}
