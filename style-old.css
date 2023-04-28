@@ -25,17 +25,85 @@ header {
   height: 66vh;
 }
 
-@media (min-width: 375px) {
-  nav > .fa-bars {
-    display: none;
+/* Cell phone sized below */
+@media (max-width: 549px){
+  .hidden--mobile {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  nav > i {
+    padding: 1rem;
+    font-size: 2em;
+  }
+
+  nav > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0;
+  }
+
+  nav > ul > li {
+    padding: 0.5rem;
+    list-style-type: none;
+  }
+
+  #bio img {
+    float: left;
+    width: 40%;
+    height: auto;
+    margin-right: 1rem;
   }
 }
 
-@media (max-width: 375px) {
-  .hidden--mobile {
+/* regular sized  below*/
+@media (min-width: 550px) {
+  nav > ul {
+    color: wheat;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5 5;
+  }
+
+  nav > ul > li {
+    color: wheat;
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 1rem 2rem;
+    margin: 5;
+    overflow: hidden;
+    background-color: brown;
+    border-radius: 5px;
+    /* display: inline-block;
+    text-decoration: none;
+    border: 1px solid;
+
+     */
+  }
+
+  nav > .fa-bars {
     display: none;
   }
+
+  #bio {
+    margin-right: 3rem;
+  }
+
+  #bio img {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin-right: 1rem;
+  }
 }
+
 
 ul {
   list-style-type: none;
