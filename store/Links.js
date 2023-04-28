@@ -2,5 +2,6 @@ export default [
   { title: "Home", text: "Home" },
   { title: "About", text: "About" },
   { title: "Results", text: "Find Eggs" },
-  { title: "Contact", text: "Contact" }
+  { title: "Contact", text: "Contact" },
+  { title: "Links", text: "Links"}
 ];
