@@ -8,13 +8,13 @@
 }
 
 #jumbotron > h2 {
-  color: white;
+  color: brown;
   text-align: center;
 }
 
 #jumbotron > a {
   text-decoration: none;
-  background-color: white;
+  background-color: brown;
   font-size: 1.5em;
   padding: 1.5rem;
   border-radius: 10px;
