@@ -25,6 +25,10 @@ header {
   height: 66vh;
 }
 
+a:hover {
+  background-color: darkslategrey;
+}
+
 /* Cell phone sized below */
 @media (max-width: 549px){
   .hidden--mobile {
@@ -129,7 +133,7 @@ li a {
   background-color: darkslategrey;
 }
 
-li a:hover {
+a:hover {
   background-color: darkslategrey;
 }
 
