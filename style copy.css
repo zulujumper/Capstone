@@ -113,18 +113,13 @@ footer {
 
 /* regular sized  below*/
 @media (min-width: 550px) {
-   nav > ul {
-    /* color: wheat; */
-    /* text-decoration: none; */
+    nav > ul {
+    color: wheat;
+    text-decoration: none;
     display: flex;
     justify-content: space-evenly;
     padding: 5 5;
   }
-
-a {
-  text-decoration: none;
-  color: wheat;
-}
 
   nav > ul > li {
     color: wheat;
@@ -132,9 +127,11 @@ a {
     padding: 1rem 2rem;
     margin: 5;
     overflow: hidden;
+    background-color: brown;
     border-radius: 5px;
+    text-decoration: none;
     display: inline-block;
-    border: 2px solid;
+    border: 1px solid;
    }
 
   nav > .fa-bars {
