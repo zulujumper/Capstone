@@ -6,5 +6,9 @@ export default state => html`
     <input id="zip" type="number" placeholder="Zip code"></input>
     <a href="./Results">FIND ME THE EGGS!</a>
   </section>
-  <p>${state.message}</p>
+  <h3>
+    The weather in ${state.weather.city} is ${state.weather.description}.
+    Temperature is ${state.weather.temp}&#176;F, and it feels like
+    ${state.weather.feelsLike}&#176;F.
+  </h3>
 `;
