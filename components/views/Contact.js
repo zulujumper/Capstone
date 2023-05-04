@@ -9,10 +9,10 @@ export default () => html`
 
         <label for="name">Email:</label>
         <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="youremail@address.com"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="youremail@address.com"
         />
 
         <label for="name">Phone:</label>
@@ -21,17 +21,17 @@ export default () => html`
         <div class="textarea">
           <label for="msg"></label>
           <textarea
-          name="msg"
-          id="msg"
-          cols="30"
-          rows="7"
-          placeholder="What would you like to tell us?"
+            name="msg"
+            id="msg"
+            cols="30"
+            rows="7"
+            placeholder="What would you like to tell us?"
           ></textarea>
         </div>
       </form>
     </div>
-    <div>
-    <input id="send" type="submit" name="submit" value="SEND IT" />
-</div>
+    <!-- <div class="centerbutt"> -->
+    <input type="submit" id="send" name="submit" value="SEND IT" />
+    <!-- </div> -->
   </body>
 `;
