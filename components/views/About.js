@@ -3,8 +3,9 @@ import eggPic from "../../assets/img/pexels-anna-shvets-4045568.jpg";
 
 export default () => html`
   <section id="bio">
-    <h2>EggBuddy launches in the spring of 2023</h2>
+    <h2 id="abouthead">EggBuddy launches in the spring of 2023</h2>
     <img src="${eggPic}" alt="picture of eggs" />
+<div class="about">
     <p>
       EggBuddy is the brainchild of Drew Hansen. Drew loves eggs but was sad
       one day when he went to his local Costco &#8482; and there were NONE in
@@ -22,7 +23,7 @@ export default () => html`
       too so you can decide where you want to shop.
     </p>
     <p>
+</div>
 
-    </p>
   </section>
 `;
