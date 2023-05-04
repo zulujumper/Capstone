@@ -83,16 +83,18 @@ footer {
 }
 
 #send {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: space-evenly;
-  width: 20%;
+  display: block;
+  margin:0 auto;
+  /* width: 20%; */
   background-color: darksalmon;
   padding: 1rem 2rem;
   border-radius: 5px;
   border: 2px solid;
 }
 
+#send:hover {
+  background-color: slategray;
+}
 
 /* Cell phone sized below */
 @media (max-width: 549px){
