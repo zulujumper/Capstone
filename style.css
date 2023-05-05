@@ -59,7 +59,7 @@ form {
   margin: 1rem 1rem;
   background-color: wheat;
   /* width: 80%; */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -69,10 +69,14 @@ form > * {
   margin: 0.5rem;
 }
 
-form > input[type="submit"] {
-  width: 40%;
-  margin: 0.5rem;
-  margin-right: auto;
+ #send {
+  display: block;
+  margin:1rem auto;
+  /* width: 20%; */
+  background-color: darksalmon;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 2px solid;
 }
 
 footer {
@@ -83,16 +87,6 @@ footer {
 
 #about {
   margin: 1rem;
-}
-
-#send {
-  display: block;
-  margin:0 auto;
-  /* width: 20%; */
-  background-color: darksalmon;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  border: 2px solid;
 }
 
 #send:hover {
