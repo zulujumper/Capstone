@@ -1,37 +1,33 @@
 import html from "html-literal";
 
 export default () => html`
-  <body>
-    <div class="form-center">
-      <form action="" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" placeholder="Name" required />
+  <div class="form-center">
+    <form action="" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Name" required />
 
-        <label for="name">Email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="youremail@address.com"
-        />
+      <label for="name">Email:</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="youremail@address.com"
+      />
 
-        <label for="name">Phone:</label>
-        <input type="tel" name="phone" id="phone" placeholder="555-555-1212" />
+      <label for="name">Phone:</label>
+      <input type="tel" name="phone" id="phone" placeholder="555-555-1212" />
 
-        <div class="textarea">
-          <label for="msg"></label>
-          <textarea
-            name="msg"
-            id="msg"
-            cols="30"
-            rows="7"
-            placeholder="What would you like to tell us?"
-          ></textarea>
-        </div>
-      </form>
-    </div>
-    <!-- <div class="centerbutt"> -->
-    <input type="submit" id="send" name="submit" value="SEND IT" />
-    <!-- </div> -->
-  </body>
+      <div class="textarea">
+        <label for="msg"></label>
+        <textarea
+          name="msg"
+          id="msg"
+          cols="30"
+          rows="7"
+          placeholder="What would you like to tell us?"
+        ></textarea>
+      </div>
+      <input type="submit" id="send" name="submit" value="SEND IT" />
+    </form>
+  </div>
 `;
