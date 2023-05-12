@@ -40,7 +40,7 @@ router.hooks({
       case "Home":
         axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=tucson`
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=springfield`
           )
           .then(response => {
             const kelvinToFahrenheit = kelvinTemp =>
@@ -59,19 +59,6 @@ router.hooks({
             done();
           });
         break;
-      // Added in Lesson 7.1
-      // case "Pizza":
-      //   axios
-      //     .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-      //     .then(response => {
-      //       store.Pizza.pizzas = response.data;
-      //       done();
-      //     })
-      //     .catch((error) => {
-      //       console.log("It puked", error);
-      //       done();
-      //     });
-      //     break;
       default:
         done();
     }
