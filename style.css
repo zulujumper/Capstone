@@ -20,13 +20,26 @@ body {
   font-size: 330%;
 }
 
-#jumbotron > a {
+#jumbotron > a, #zip {
   text-decoration: none;
   color: wheat;
   background-color: brown;
   font-size: 1.5em;
   padding: 1.5rem;
   border-radius: 10px;
+}
+
+#zipForm {
+  background-color: unset;
+  border: unset;
+}
+
+.zip {
+  margin-top: 4rem;
+}
+
+#custZip {
+  width: 85px;
 }
 
 .about {
@@ -38,11 +51,6 @@ body {
 #abouthead {
   text-align: center;
   font-size: 2rem;
-}
-
-#zip {
-  width: 85px;
-  margin: 0 0 2em;
 }
 
 .form-center {
