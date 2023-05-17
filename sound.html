@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
+
+<div>
+  <ul class="bak">
+    <a href="#">BAK!</a>
+    <audio id="bak" preload="auto">
+      <source src="assets/mp3/Bakbak.mp3">
+    </audio>
+  </ul>
+
+  <script>
+    let bakbak = $("#bak")[0];
+    $(".bak")
+    .mouseenter(function() {
+      bakbak.Play();
+    });
+  </script>
+</div>
+
