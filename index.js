@@ -33,14 +33,36 @@ function afterRender(state) {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
-      const custZip = event.target.elements;
+      const custZip = event.target.elements.custZip.value;
       console.log("Target Zip Code", custZip);
 
       axios
-        .post(`/kroger`, custZip)
+        .get(`${process.env.APIURL}/kroger/locations/${custZip}`)
         .then(response => {
-
+          console.log(response.data.data);
+          store.Results.locations = response.data.data;
           router.navigate("/Results"); // navigates to the Results page
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
+
+  if (state.view === "Results") {
+    document.querySelector("table").addEventListener("onclick", event => {
+      // prevent the default action aka redirect to the same url using POST method
+      event.preventDefault();
+
+      const storeID = event.target.elements.locationId.value;
+      console.log("Store Selected", storeID);
+
+      axios
+        .get(`${process.env.APIURL}/kroger/products/"eggs"`)
+        .then(response => {
+          console.log(response.data.data);
+          store.Results.products = response.data.data;
+          router.navigate("/EggTable");
         })
         .catch(error => {
           console.log("It puked", error);

@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "app:watch",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: app:watch",
+			"detail": "nodemon --watch ./server -e js ./server/app.js"
+		}
+	]
+}

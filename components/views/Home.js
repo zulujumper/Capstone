@@ -13,6 +13,7 @@ export default state => html`
     <input
       type="number"
       id="custZip"
+      name="custZip"
       placeholder="Zip code" />
 
     <input class="zip" id="zip" type="submit" name="submit" value="FIND ME THE EGGS!" />

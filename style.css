@@ -38,6 +38,34 @@ body {
   margin-top: 4rem;
 }
 
+
+
+td.hiddenID {
+  display: none;
+}
+
+.avail {
+  text-align: center;
+}
+
+ table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, td {
+  table-layout: auto;
+  width: fit-content;
+  background-color: wheat;
+  border: 2px solid;
+  border-color: black;
+  border-radius: 5px;
+}
+
+.storeSelect {
+  text-align: center;
+}
+
 #custZip {
   width: 85px;
 }
