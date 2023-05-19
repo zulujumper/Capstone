@@ -22,10 +22,31 @@ function render(state = store.Home) {
 }
 
 // add menu toggle to bars icon in nav bar
+// add menu toggle to bars icon in nav bar
 function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  if (state.view === "Home") {
+    document.querySelector("form").addEventListener("submit", event => {
+      // prevent the default action aka redirect to the same url using POST method
+      event.preventDefault();
+
+      const custZip = event.target.elements;
+      console.log("Target Zip Code", custZip);
+
+      axios
+        .post(`/kroger`, custZip)
+        .then(response => {
+
+          router.navigate("/Results"); // navigates to the Results page
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 router.hooks({

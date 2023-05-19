@@ -3,8 +3,21 @@ import html from "html-literal";
 export default state => html`
   <section id="jumbotron">
     <h1>EggBuddy</h1>
-    <input id="zip" type="number" placeholder="Zip code"></input>
-    <a href="./Results">FIND ME THE EGGS!</a>
+
+    <form
+      class="zipForm"
+      id="zipForm"
+      method="POST"
+      action="">
+
+    <input
+      type="number"
+      id="custZip"
+      placeholder="Zip code" />
+
+    <input class="zip" id="zip" type="submit" name="submit" value="FIND ME THE EGGS!" />
+
+    </form>
   </section>
   <h3>
     The weather in ${state.weather.city} is ${state.weather.description}.
