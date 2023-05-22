@@ -50,7 +50,7 @@ function afterRender(state) {
   }
 
   if (state.view === "Results") {
-    document.querySelector("table").addEventListener("onclick", event => {
+    document.querySelector("table").addEventListener("onClick", event => {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
@@ -58,11 +58,39 @@ function afterRender(state) {
       console.log("Store Selected", storeID);
 
       axios
-        .get(`${process.env.APIURL}/kroger/products/"eggs"`)
+        .get(`${process.env.APIURL}/kroger/products`)
         .then(response => {
           console.log(response.data.data);
           store.Results.products = response.data.data;
           router.navigate("/EggTable");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
+
+  if (state.view === "Contact") {
+    document.querySelector("table").addEventListener("submit", event => {
+      // prevent the default action aka redirect to the same url using POST method
+      event.preventDefault();
+
+      const contactInfo = event.target.elements;
+      console.log("Customer Contact Info", contactInfo);
+
+      const requestData = {
+        customer: contactInfo.name.value,
+        crust: contactInfo.email.value,
+        cheese: contactInfo.phone.value,
+        sauce: contactInfo.msg.value
+      };
+
+      axios
+        .post(`${process.env.MONGODB}/contact`, requestData)
+        .then(response => {
+          console.log(response.data.data);
+          store.Contact.contact = response.data;
+          // router.navigate("/EggTable");
         })
         .catch(error => {
           console.log("It puked", error);
