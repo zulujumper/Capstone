@@ -5,6 +5,7 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const kroger = require("./routers/kroger");
+const contact = require("./routers/contact");
 
 dotenv.config();
 
@@ -53,6 +54,7 @@ app.get("/status", (request, response) => {
 });
 
 app.use("/kroger", kroger);
+app.use("/contact", contact);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040

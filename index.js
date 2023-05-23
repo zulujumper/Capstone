@@ -71,7 +71,7 @@ function afterRender(state) {
   }
 
   if (state.view === "Contact") {
-    document.querySelector("table").addEventListener("submit", event => {
+    document.querySelector("form").addEventListener("submit", event => {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
@@ -80,16 +80,16 @@ function afterRender(state) {
 
       const requestData = {
         customer: contactInfo.name.value,
-        crust: contactInfo.email.value,
-        cheese: contactInfo.phone.value,
-        sauce: contactInfo.msg.value
+        email: contactInfo.email.value,
+        phone: contactInfo.phone.value,
+        message: contactInfo.msg.value
       };
 
       axios
-        .post(`${process.env.MONGODB}/contact`, requestData)
+        .post(`${process.env.APIURL}/Contact`, requestData)
         .then(response => {
-          console.log(response.data.data);
-          store.Contact.contact = response.data;
+          // console.log(response.data);
+          store.Contact.contacts.push(response.data);
           // router.navigate("/EggTable");
         })
         .catch(error => {
