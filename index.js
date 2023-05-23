@@ -69,34 +69,6 @@ function afterRender(state) {
         });
     });
   }
-
-  if (state.view === "Contact") {
-    document.querySelector("form").addEventListener("submit", event => {
-      // prevent the default action aka redirect to the same url using POST method
-      event.preventDefault();
-
-      const contactInfo = event.target.elements;
-      console.log("Customer Contact Info", contactInfo);
-
-      const requestData = {
-        customer: contactInfo.name.value,
-        email: contactInfo.email.value,
-        phone: contactInfo.phone.value,
-        message: contactInfo.msg.value
-      };
-
-      axios
-        .post(`${process.env.APIURL}/Contact`, requestData)
-        .then(response => {
-          // console.log(response.data);
-          store.Contact.contacts.push(response.data);
-          // router.navigate("/EggTable");
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
-    });
-  }
 }
 
 router.hooks({
