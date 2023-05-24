@@ -50,7 +50,7 @@ function afterRender(state) {
   }
 
   if (state.view === "Results") {
-    document.querySelector("form").addEventListener("click", event => {
+    document.querySelector("form").addEventListener("submit", event => {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
@@ -62,7 +62,7 @@ function afterRender(state) {
         .then(response => {
           console.log(response.data.data);
           store.Results.products = response.data.data;
-          router.navigate("/EggTable");
+          router.navigate("/Eggtable");
         })
         .catch(error => {
           console.log("It puked", error);
