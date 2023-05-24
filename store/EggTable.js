@@ -1,5 +1,5 @@
 export default {
   header: "Eggs:",
-  view: "Eggs",
-  eggs: []
+  view: "Eggtable",
+  products: []
 };

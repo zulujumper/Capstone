@@ -11,8 +11,8 @@ export default state => html`
         <th>Price</th>
         <th>Availability</th>
       </tr>
-      ${state.locations
-        .map(location => {
+      ${state.products
+        .map(product => {
           return `<tr><td class="brandName">${product.brand}</td>
         <td class="quantity">${product.items.size}</td>
         <td class="price">${product.description}</td>
@@ -21,6 +21,4 @@ export default state => html`
         })
         .join("")}
     </table>
-    // <input type="submit" id="send" name="submit" value="FIND THEM!" />
-
 `;

@@ -61,7 +61,7 @@ function afterRender(state) {
         .get(`${process.env.APIURL}/kroger/products/${storeID}`)
         .then(response => {
           console.log(response.data.data);
-          store.Results.products = response.data.data;
+          store.Eggtable.eggs = response.data.data;
           router.navigate("/Eggtable");
         })
         .catch(error => {
