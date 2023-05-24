@@ -20,5 +20,6 @@ export default state => html`
         })
         .join("")}
     </table>
+    <input type="submit" id="send" name="submit" value="FIND THEM!" />
   </form>
 `;

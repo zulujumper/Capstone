@@ -50,7 +50,7 @@ function afterRender(state) {
   }
 
   if (state.view === "Results") {
-    document.querySelector("form").addEventListener("click", event => {
+    document.querySelector("form").addEventListener("submit", event => {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
@@ -61,8 +61,8 @@ function afterRender(state) {
         .get(`${process.env.APIURL}/kroger/products/${storeID}`)
         .then(response => {
           console.log(response.data.data);
-          store.Results.products = response.data.data;
-          router.navigate("/EggTable");
+          store.Eggtable.eggs = response.data.data;
+          router.navigate("/Eggtable");
         })
         .catch(error => {
           console.log("It puked", error);
