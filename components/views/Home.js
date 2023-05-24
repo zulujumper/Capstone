@@ -16,7 +16,12 @@ export default state => html`
       name="custZip"
       placeholder="Zip code" />
 
-    <input class="zip" id="zip" type="submit" name="submit" value="FIND ME THE EGGS!" />
+    <input
+      class="zip"
+      id="zip"
+      type="submit"
+      name="submit"
+      value="FIND ME THE EGGS!" />
 
     </form>
   </section>
