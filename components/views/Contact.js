@@ -2,11 +2,11 @@ import html from "html-literal";
 
 export default () => html`
   <div class="form-center">
-    <form action="" method="POST">
+    <form action="https://formspree.io/f/mlekkjoe" method="POST">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" placeholder="Name" required />
 
-      <label for="name">Email:</label>
+      <label for="email">Email:</label>
       <input
         type="email"
         name="email"
@@ -14,7 +14,7 @@ export default () => html`
         placeholder="youremail@address.com"
       />
 
-      <label for="name">Phone:</label>
+      <label for="phone">Phone:</label>
       <input type="tel" name="phone" id="phone" placeholder="555-555-1212" />
 
       <div class="textarea">

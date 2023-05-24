@@ -28,46 +28,51 @@ function afterRender(state) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
-  if (state.view === "Home") {
-    document.querySelector("form").addEventListener("submit", event => {
-      // prevent the default action aka redirect to the same url using POST method
-      event.preventDefault();
+  switch (view) {
+    case "Home":
+      document.querySelector("form").addEventListener("submit", event => {
+        // prevent the default action aka redirect to the same url using POST method
+        event.preventDefault();
 
-      const custZip = event.target.elements.custZip.value;
-      console.log("Target Zip Code", custZip);
+        const custZip = event.target.elements.custZip.value;
+        console.log("Target Zip Code", custZip);
 
-      axios
-        .get(`${process.env.APIURL}/kroger/locations/${custZip}`)
-        .then(response => {
-          console.log(response.data.data);
-          store.Results.locations = response.data.data;
-          router.navigate("/Results"); // navigates to the Results page
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
-    });
-  }
+        axios
+          .get(`${process.env.APIURL}/kroger/locations/${custZip}`)
+          .then(response => {
+            console.log(response.data.data);
+            store.Results.locations = response.data.data;
+            router.navigate("/Results"); // navigates to the Results page
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+      });
+      break;
+    case "Results":
+      document.querySelector("table").addEventListener("onClick", event => {
+        // prevent the default action aka redirect to the same url using POST method
+        event.preventDefault();
 
-  if (state.view === "Results") {
-    document.querySelector("form").addEventListener("click", event => {
-      // prevent the default action aka redirect to the same url using POST method
-      event.preventDefault();
+        const storeID = event.target.elements.storeSelect.value;
+        console.log("Store Selected", storeID);
 
-      const storeID = event.target.elements.storeSelect.value;
-      console.log("Store Selected", storeID);
-
-      axios
-        .get(`${process.env.APIURL}/kroger/products/${storeID}`)
-        .then(response => {
-          console.log(response.data.data);
-          store.Results.products = response.data.data;
-          router.navigate("/EggTable");
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
-    });
+        axios
+          .get(`${process.env.APIURL}/kroger/products`)
+          .then(response => {
+            console.log(response.data.data);
+            store.Results.products = response.data.data;
+            router.navigate("/EggTable");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+      });
+      break;
+    default:
+      done();
   }
 }
 
