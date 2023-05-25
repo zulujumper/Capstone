@@ -6,11 +6,11 @@ const router = Router();
 router.get("/locations/:zipCode", (request, res) => {
   const options = {
     method: "POST",
-    url: "https://api-ce.kroger.com/v1/connect/oauth2/token",
+    url: "https://api.kroger.com/v1/connect/oauth2/token",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization:
-        "Basic ZWdnYnVkZHktOGZhNWFiZmM3ZThiYjllZjYwMDEzN2FjMzg2NDFkZGYxOTAwOTMwMjM1OTUzODIzODE4OkEtSm9hVndETnhCaE4wdGJsbGhxcndiaWYwU2VhNDZROXowYWg2dkM="
+        "Basic ZWdnYnVkZHlwcm8tODMwZmQ0MjE0ZWUwZjU2NzhmYmYzNThjMTYwODIwZGQyOTY2Mzc3NTI0NjkyOTc3Mzc5OmlaY2FfMl9wYnEwemRZTm9CV2hVSXh0MkVvdnJOdkpQc2d1M3Z2Mkc="
     },
     data: { grant_type: "client_credentials", scope: "product.compact" }
   };
@@ -23,7 +23,7 @@ router.get("/locations/:zipCode", (request, res) => {
 
       const locationOptions = {
         method: "GET",
-        url: "https://api-ce.kroger.com/v1/locations",
+        url: "https://api.kroger.com/v1/locations",
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -47,11 +47,11 @@ router.get("/locations/:zipCode", (request, res) => {
 router.get("/products/:storeLocation", (request, res) => {
   const options = {
     method: "POST",
-    url: "https://api-ce.kroger.com/v1/connect/oauth2/token",
+    url: "https://api.kroger.com/v1/connect/oauth2/token",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization:
-        "Basic ZWdnYnVkZHktOGZhNWFiZmM3ZThiYjllZjYwMDEzN2FjMzg2NDFkZGYxOTAwOTMwMjM1OTUzODIzODE4OkEtSm9hVndETnhCaE4wdGJsbGhxcndiaWYwU2VhNDZROXowYWg2dkM="
+        "Basic ZWdnYnVkZHlwcm8tODMwZmQ0MjE0ZWUwZjU2NzhmYmYzNThjMTYwODIwZGQyOTY2Mzc3NTI0NjkyOTc3Mzc5OmlaY2FfMl9wYnEwemRZTm9CV2hVSXh0MkVvdnJOdkpQc2d1M3Z2Mkc="
     },
     data: { grant_type: "client_credentials", scope: "product.compact" }
   };
@@ -64,13 +64,13 @@ router.get("/products/:storeLocation", (request, res) => {
 
       const productOptions = {
         method: "GET",
-        url: "https://api-ce.kroger.com/v1/products",
+        url: "https://api.kroger.com/v1/products",
         headers: {
           Authorization: `Bearer ${token}`
         },
         params: {
           "filter.term": "eggs",
-          "filter.locationId": request.params.locationId
+          "filter.locationId": request.params.storeLocation
         }
       };
       axios
