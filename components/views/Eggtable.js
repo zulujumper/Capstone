@@ -7,16 +7,15 @@ export default state => html`
     <tr>
       <th>Brand</th>
       <th>Quantity</th>
-      <th>Availability</th>
+      <th>Stock Level</th>
+      <th>Price</th>
     </tr>
     ${state.products
       .map(product => {
         return `<tr><td class="brandName">${product["brand"]}</td>
-        <td class="quantity">${product["items"]["0"]["size"]}</td>
-        <td class="available">${product["items"]["0"]["fulfillment"]["inStore"]}</td>
-
-
-
+        <td class="quantity">${product["items"][0]["size"]}</td>
+        <td class="available">${product.items[0].inventory.stockLevel}</td>
+        <td class="price">${product["items"][0]["price"]["regular"]}</td>
         </tr>`;
       })
       .join("")}
