@@ -58,6 +58,14 @@ table, td {
   border: 2px solid;
   border-color: black;
   border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+#eggpic {
+  height: 40px !important;
+  width: auto;
+  align: center;
 }
 
 .storeSelect {
