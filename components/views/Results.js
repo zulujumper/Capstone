@@ -10,6 +10,7 @@ export default state => html`
         <th>Address</th>
         <th>Select</th>
       </tr>
+      <!-- builds a table for customers to see based on their inputted zipCode -->
       ${state.locations
         .map(location => {
           return `<tr><td class="locationName">${location.name}</td>
@@ -20,6 +21,7 @@ export default state => html`
         })
         .join("")}
     </table>
+
     <input type="submit" id="send" name="submit" value="FIND THEM!" />
   </form>
 `;
