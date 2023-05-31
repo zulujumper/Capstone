@@ -7,10 +7,11 @@ export default state => html`
     <tr>
       <th>Brand</th>
       <th>Quantity</th>
-      <th>       </th>
+      <th></th>
       <th>Stock Level</th>
       <th>Price</th>
     </tr>
+    <!-- builds a table for customers to see based on their grocery store selection -->
     ${state.products
       .map(product => {
         return `<tr><td class="brandName">${product.brand}</td>
