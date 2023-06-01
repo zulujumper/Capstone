@@ -3,10 +3,11 @@ const axios = require("axios").default;
 
 const router = Router();
 
+// sends a POST request to the Kroger API based on customer's zip to get grocery store locations
 router.get("/locations/:zipCode", (request, res) => {
   const options = {
     method: "POST",
-    url: "https://api.kroger.com/v1/connect/oauth2/token",
+    url: "https://api.kroger.com/v1/connect/oauth2/token", // getting the access token needed for the request and storing it in the variable 'options'
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization:
@@ -16,11 +17,12 @@ router.get("/locations/:zipCode", (request, res) => {
   };
 
   axios
-    .request(options)
+    .request(options) // using the OAth2 token to send the API request and get locations near the zipcode inputted
     .then(function(response) {
       console.log(response.data);
-      const token = response.data.access_token;
+      const token = response.data.access_token; //creating an access token variable from above API request
 
+      // creating a locationOptions variable GET request to the Kroger API
       const locationOptions = {
         method: "GET",
         url: "https://api.kroger.com/v1/locations",
@@ -33,7 +35,7 @@ router.get("/locations/:zipCode", (request, res) => {
         .request(locationOptions)
         .then(function(locationResponse) {
           console.log(locationResponse.data);
-          res.json(locationResponse.data);
+          res.json(locationResponse.data); //getting the 'res' response data in json format
         })
         .catch(function(error) {
           console.error(error);
@@ -44,6 +46,7 @@ router.get("/locations/:zipCode", (request, res) => {
     });
 });
 
+//taking the storeLocation data from above and finding the inventory
 router.get("/products/:storeLocation", (request, res) => {
   const options = {
     method: "POST",
@@ -70,8 +73,7 @@ router.get("/products/:storeLocation", (request, res) => {
         },
         params: {
           "filter.term": "eggs",
-          "filter.locationId": request.params.storeLocation,
-          "filter.limit": 50
+          "filter.locationId": request.params.storeLocation
         }
       };
       axios

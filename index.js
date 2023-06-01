@@ -22,7 +22,6 @@ function render(state = store.Home) {
 }
 
 // add menu toggle to bars icon in nav bar
-// add menu toggle to bars icon in nav bar
 function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
@@ -33,14 +32,14 @@ function afterRender(state) {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
-      const custZip = event.target.elements.custZip.value;
-      console.log("Target Zip Code", custZip);
+      const custZip = event.target.elements.custZip.value; //creates a variable from the customer's zip code input
+      console.log("Target Zip Code", custZip); // test to see customer's zip code in console
 
       axios
-        .get(`${process.env.APIURL}/kroger/locations/${custZip}`)
+        .get(`${process.env.APIURL}/kroger/locations/${custZip}`) //sends zip code to Kroger API to get nearby stores
         .then(response => {
           console.log(response.data.data);
-          store.Results.locations = response.data.data;
+          store.Results.locations = response.data.data; //sends json data to Results store
           router.navigate("/Results"); // navigates to the Results page
         })
         .catch(error => {
@@ -54,16 +53,16 @@ function afterRender(state) {
       // prevent the default action aka redirect to the same url using POST method
       event.preventDefault();
 
-      const storeID = event.target.elements.storeSelect.value;
-      console.log("Store Selected", storeID);
+      const storeID = event.target.elements.storeSelect.value; //creates a variable from customer's store selection
+      console.log("Store Selected", storeID); //test to see customer's locationId selection in console
 
       axios
-        .get(`${process.env.APIURL}/kroger/products/${storeID}`)
+        .get(`${process.env.APIURL}/kroger/products/${storeID}`) //sends locationId to Kroger API to get nearby stores
         .then(response => {
 
           console.log(response.data.data);
-          store.Eggtable.products = response.data.data;
-          router.navigate("/Eggtable");
+          store.Eggtable.products = response.data.data; //sends json data to Eggtable store
+          router.navigate("/Eggtable"); // navigates to the Eggtable page
         })
         .catch(error => {
           console.log("It puked", error);
