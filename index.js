@@ -59,6 +59,7 @@ function afterRender(state) {
       axios
         .get(`${process.env.APIURL}/kroger/products/${storeID}`) //sends locationId to Kroger API to get nearby stores
         .then(response => {
+
           console.log(response.data.data);
           store.Eggtable.products = response.data.data; //sends json data to Eggtable store
           router.navigate("/Eggtable"); // navigates to the Eggtable page

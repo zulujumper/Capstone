@@ -72,8 +72,9 @@ router.get("/products/:storeLocation", (request, res) => {
           Authorization: `Bearer ${token}`
         },
         params: {
-          "filter.term": "eggs", //finding the eggs! In future iterations this will be a variable based on what the customer wants to find
-          "filter.locationId": request.params.storeLocation
+          "filter.term": "eggs",
+          "filter.locationId": request.params.storeLocation,
+          "filter.limit": 50
         }
       };
       axios
