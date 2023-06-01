@@ -60,6 +60,7 @@ function afterRender(state) {
       axios
         .get(`${process.env.APIURL}/kroger/products/${storeID}`)
         .then(response => {
+
           console.log(response.data.data);
           store.Eggtable.products = response.data.data;
           router.navigate("/Eggtable");
