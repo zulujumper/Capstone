@@ -74,6 +74,7 @@ router.get("/products/:storeLocation", (request, res) => {
         params: {
           "filter.term": "eggs",
           "filter.locationId": request.params.storeLocation
+          "filter.limit": 50
         }
       };
       axios
