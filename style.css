@@ -29,6 +29,10 @@ body {
   border-radius: 10px;
 }
 
+#beersign {
+  border-radius: 5px;
+}
+
 #zipForm {
   background-color: unset;
   border: unset;
@@ -80,6 +84,8 @@ table, td {
   background-color: wheat;
   padding: 1.5rem;
   font-size: 1.5em;
+  border-radius: 5px;
+  border: solid 2px black;
 }
 
 #abouthead {

@@ -4,7 +4,7 @@ import eggPic from "../../assets/img/pexels-anna-shvets-4045568.jpg";
 export default () => html`
   <section id="bio">
     <h2 id="abouthead">EggBuddy launches in the spring of 2023</h2>
-    <img src="${eggPic}" alt="picture of eggs" />
+    <img id="beersign" src="${eggPic}" alt="picture of eggs" />
     <div class="about">
       <p>
         EggBuddy is the brainchild of Drew Hansen. Drew loves eggs but was sad
